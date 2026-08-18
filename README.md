@@ -1,74 +1,87 @@
-**#site url**
+# Movie Browser
 
-**https://wizardly-ritchie-138df8.netlify.app/**
+A simple React single-page app for browsing movies. It includes movie cards, search, loading states, and reducer-based state management.
 
-# Getting Started with Create React App
+## Live Demo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+https://wizardly-ritchie-138df8.netlify.app/
 
-## Available Scripts
+## Tech Stack
 
-In the project directory, you can run:
+* React
+* JavaScript
+* Create React App
+* Reducer-based state management
+* Movie API
 
-### `npm start`
+## Project Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```text
+src/
+├── apis/
+│   └── apis.js
+├── components/
+│   ├── header/
+│   │   ├── Header.jsx
+│   │   └── Logo.jsx
+│   ├── loader/
+│   │   └── Loader.jsx
+│   └── movies/
+│       ├── Movies.jsx
+│       ├── MovieCard.jsx
+│       └── SearchBar.jsx
+├── data/
+│   └── initialState.js
+├── reducers/
+│   ├── reducer.js
+│   └── eventReducer.js
+├── App.js
+├── index.js
+└── index.css
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Features
 
-### `npm test`
+* Browse movies
+* Search and filter movies
+* Movie card UI
+* Loading state
+* API-based movie data
+* Reducer-based state management
+* Responsive interface
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+### Install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Development
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm start
+```
 
-### `npm run eject`
+Open `http://localhost:3000`.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Tests
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm test
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Production Build
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```bash
+npm run build
+```
 
-## Learn More
+## How It Works
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`index.js` starts the React application and mounts `App.js`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+`App.js` composes the main UI. `Movies.jsx` fetches movie data through the API module and renders individual `MovieCard` components.
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Application state is managed using reducers, with the initial state defined in `src/data/initialState.js`.
